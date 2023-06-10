@@ -20,9 +20,9 @@ tweet_generator = LLMChain(prompt = tweet_prompt, llm = gpt3_model)
 st.title("Tweet Generator 🐦")
 st.subheader("🚀 Generate tweets on any topic")
 
-number = st.number_input("Number of tweets", min_value = 1, max_value = 10, value = 1, step = 1)
-
 topic = st.text_input("Topic")
+
+number = st.number_input("Number of tweets", min_value = 1, max_value = 10, value = 1, step = 1)
 
 if st.button("Generate"):
     tweets = tweet_generator.run(number = number, topic = topic)
