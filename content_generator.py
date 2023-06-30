@@ -2,11 +2,11 @@ import streamlit as st
 from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
 from langchain import PromptTemplate, LLMChain
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 import os
 
-# os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 content_template = """
 Give me full {number} posts on {topic} which I can post on {platform}.
